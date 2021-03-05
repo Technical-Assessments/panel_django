@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>vendors</title>
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="{% static 'tabla_js_code.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <h4>Asignación de vendor al trayecto</h4>
+            <div class="table-responsive">
+              <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+                        <thead>
+                            <th><input type="checkbox" id="checkall" /></th>
+                            <th>VendorID</th>
+                            <th>tpep_pickup_date</th>
+                            <th>trip_distance</th>
+                            <th>payment_type</th>
+                         </thead>
+              </table>
+            </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="button" class="btn btn-primary">Aplicar Cambios
+            </button>
+        </div>
+    </div>
+
+
+<script>
+$(document).ready(function() {
+    $('#bootstrapdatatable').DataTable({
+      "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+        "iDisplayLength": 3
+       }
+    );
+} );
+</script>
+</body>
+</html>
