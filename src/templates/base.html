@@ -19,13 +19,22 @@
             <h4>Asignación de vendor al trayecto</h4>
             <div class="table-responsive">
               <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
-                        <thead>
-                            <th><input type="checkbox" id="checkall" /></th>
-                            <th>VendorID</th>
-                            <th>tpep_pickup_date</th>
-                            <th>trip_distance</th>
-                            <th>payment_type</th>
-                         </thead>
+                  <thead>
+                      <th>VendorID</th>
+                      <th>tpep_pickup_date</th>
+                      <th>trip_distance</th>
+                      <th>payment_type</th>
+                  </thead>
+                  <tbody>
+                    {% for row in page_obj %}
+                    <tr>
+                        <td>{{ row.vendorid }}</td>
+                        <td>{{ row.tpep_pickup_datetime }}</td>
+                        <td>{{ row.trip_distance }}</td>
+                        <td>{{ row.payment_type }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
               </table>
             </div>
             </div>
@@ -36,7 +45,8 @@
         </div>
     </div>
 
-
+{{ id }}
+{{ vendorid }}
 <script>
 $(document).ready(function() {
     $('#bootstrapdatatable').DataTable({
