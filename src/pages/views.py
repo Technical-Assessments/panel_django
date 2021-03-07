@@ -19,12 +19,3 @@ def panel(request, *args, **kwargs):
     page_obj = paginator.get_page(page_number)
     return render(request, "base.html", {'page_obj': page_obj})
 
-'''
-   context = {
-        'id': obj.id,
-        'vendorid': obj.vendorid,
-        'tpep_pickup_datetime': obj.tpep_pickup_datetime,
-        'trip_distance': obj.trip_distance,
-        'payment_type': obj.payment_type
-    }
-'''
