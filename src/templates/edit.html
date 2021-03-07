@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
 </head>
 <body>
 <div class="col-md-12">
-    <h4>Edit record</h4>
-    <form method="POST" class="post-form" action="/update/{{employee.id}}">
+    <!-- <h4>Edit record</h4> -->
+    <form method="POST" class="post-form" action="/update/{{row.id}}">
         <!-- {% csrf_token %} -->
         <div class="container">
             <br>
@@ -20,29 +22,34 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">VendorID:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="id" id="id_id" required maxlength="20"
-                           value="{{ employee.id }}"/>
+                    <select class="form-control" name="id" id="id_id">
+                        <option value="">{{ row.vendorid }}</option>
+                        <option value="1">Creative Mobile Technologies, LLC</option>
+                        <option value="2">VeriFone Inc.</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">tpep_pickup_date:</label>
                 <div class="col-sm-4">
                     <input disabled type="text" class="form-control" name="name" id="id_name" required maxlength="100"
-                           value="{{ employee.name }}"/>
+                           value="{{ row.tpep_pickup_datetime }}"/>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">trip_distance:</label>
                 <div class="col-sm-4">
-                    <input disabled type="email" class="form-control" name="email" id="id_email" required maxlength="254"
-                           value="{{ employee.email }}"/>
+                    <input disabled type="email" class="form-control" name="email" id="id_email" required
+                           maxlength="254"
+                           value="{{ row.trip_distance }}"/>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">payment_type:</label>
                 <div class="col-sm-4">
-                    <input disabled type="text" class="form-control" name="contact" id="id_contact" required maxlength="15"
-                           value="{{ employee.contact }}"/>
+                    <input disabled type="text" class="form-control" name="contact" id="id_contact" required
+                           maxlength="15"
+                           value="{{ row.payment_type }}"/>
                 </div>
             </div>
             <div class="form-group row">
@@ -53,6 +60,6 @@
             </div>
         </div>
     </form>
-
+</div>
 </body>
 </html>
