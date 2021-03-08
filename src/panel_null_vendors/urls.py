@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from pages.views import home_view, panel, edit
+from pages.views import home_view, panel, edit, update
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,6 @@ urlpatterns = [
     path('panel/', panel),
     path('edit/<int:id>', edit),
     path('', include('datatable_null_vendors.urls')),
+    path('update/<int:id>', update),
 ]
 
