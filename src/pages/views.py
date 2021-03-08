@@ -1,14 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.db.models import F
 
 from datatable_null_vendors.models import DataTable
+from rest_framework import viewsets
+from datatable_null_vendors.serializers import TripSerializer
+from datatable_null_vendors.models import Yellowtaxis
+
 # Create your views here.
 
 
-def home_view(*args, **kwargs):
+def home_view(request, *args, **kwargs):
 
-    return HttpResponse("<h1> Hello </h1>")
+    return render(request, "home.html")
 
 
 def panel(request, *args, **kwargs):
@@ -40,3 +45,10 @@ def panel(request, *args, **kwargs):
 def edit(request, id):
     row = DataTable.objects.get(id=id)
     return render(request, 'edit.html', {'row': row})
+
+
+class TripViewSet(viewsets.ModelViewSet):
+    queryset = Yellowtaxis.objects.all().order_by('vendorid'
+        #F('trip_distance').desc(nulls_last=True)
+    )
+    serializer_class = TripSerializer
