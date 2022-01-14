@@ -15,7 +15,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'panel_null_vendors.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -92,6 +92,16 @@ DATABASES = {
         'HOST': '127.0.0.1',
 
         'PORT': '5432',
+
+    }
+} """
+
+DATABASES = {
+    'default': {
+
+        'ENGINE': 'django.db.backends.sqlite3',
+
+        'NAME': f'{BASE_DIR}/database/taxis.db',
 
     }
 }

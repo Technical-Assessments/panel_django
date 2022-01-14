@@ -4,10 +4,9 @@ from django.core.paginator import Paginator
 from django.db.models import F
 from rest_framework import generics
 
-from datatable_null_vendors.models import DataTable
+from datatable_null_vendors.models import DataTable, Yellowtaxis
 from rest_framework import viewsets
 from datatable_null_vendors.serializers import TripSerializer
-from datatable_null_vendors.models import Yellowtaxis
 from datatable_null_vendors.forms import VendorForm
 
 # Create your views here.
@@ -20,8 +19,10 @@ def home_view(request, *args, **kwargs):
 
 def panel(request, *args, **kwargs):
 
-    rows = DataTable.objects.all()
-    paginator = Paginator(rows, 100)
+    # rows = DataTable.objects.all()
+    # rows = DataTable.objects.get_queryset().order_by('id')
+    rows = Yellowtaxis.objects.get_queryset().order_by('id')
+    paginator = Paginator(rows, 10)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

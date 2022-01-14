@@ -16,7 +16,7 @@ if __name__ == "__main__":
     df = csv_to_df(year, taxis_color, *months)
     print(df)
 
-    sqlite_insert_df(db_name, table_name, df)
+    name = "./src/database/2020_yellow_jan_feb_mar.csv"
+    df.to_csv(name, index=False)
 
-    # name = "2020_yellow_jan_feb_mar.csv"
-    # yellowtaxis_2020.to_csv(name, index=False)
+    sqlite_insert_df(db_name, table_name, df)

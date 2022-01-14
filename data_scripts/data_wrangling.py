@@ -51,5 +51,7 @@ def csv_to_df(year, taxi_color ,*month):
     
     final_df.insert(4, 'trip_duration_seconds', trip_duration_seconds)
     final_df.insert(5, 'trip_duration', trip_duration)
+
+    final_df.columns = [col.lower() for col in final_df.columns.to_list()]
     
     return final_df
