@@ -3,10 +3,10 @@ Index
 - [Folder&nbsp;structure](#Folder&nbsp;structure)
 
 ## Installation
-- <strong><em>conda create --name django_env python=3.8</em></strong>
-- conda activate django_env 
-- pip install -r requirements.txt
-- python db_generation.py
+- <em>conda create --name django_env python=3.8</em>
+- <em>conda activate django_env</em>
+- <em>pip install -r requirements.txt</em>
+- <em>python db_generation.py</em>
 
 &nbsp;
 
