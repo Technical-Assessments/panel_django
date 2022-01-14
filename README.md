@@ -1,4 +1,4 @@
-- [Folder structure](#Folder structure)
+- [Folder&nbsp;structure](#Folder&nbsp;structure)
 - [Installation](#Installation)
 
 
