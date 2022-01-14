@@ -1,3 +1,18 @@
+- [Folder structure](#Folder structure)
+- [Installation](#Installation)
+
+
+## Folder structure
+aa
+
+## Installation
+- conda create --name django_env python=3.8
+- conda activate django_env 
+- pip install -r requirements.txt
+- python db_generation.py
+
+
+
 El Repositorio cuenta con 5 directorios:
 1. Panel_null_vendors. Constituye el proyecto django iniciado con django-admin startproject
 2. Datatable_null_vendors. Constituye la Django app que incluye los modelos necesarios
