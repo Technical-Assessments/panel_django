@@ -1,9 +1,8 @@
 ## Index
 - [Description](#Description)
 - [Installation](#Installation)
-- [Currently&nbsp;under&nbsp;develop](#Currently&nbsp;under&nbsp;develop)
+- [Currently under develop](#Currently-under-develop)
 - [Folder structure](#Folder-structure)
-- [test 1](#test-1)
 
 ## Description
 
@@ -38,5 +37,3 @@ Este pequeño proyecto es la implementación de la technical assessment descrita
 
 - El directorio <strong><em>data_scripts</em></strong>
 - El directorio <strong><em>Assessment_answers</em></strong>
-
-## test 1
