@@ -14,7 +14,7 @@ from datatable_null_vendors.forms import VendorForm
 
 def home_view(request, *args, **kwargs):
 
-    return render(request, "home.html")
+    return render(request, "OLDhome.html")
 
 
 def panel(request, *args, **kwargs):

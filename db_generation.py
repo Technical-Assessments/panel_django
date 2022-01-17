@@ -10,13 +10,13 @@ if __name__ == "__main__":
     table_name = "yellowtaxis"
     year = 2020
     taxis_color = "Yellow"
-    months = ("January",)
+    months = ("January",) # Several months are supported as a tuple.
     year_html = None
 
     df = csv_to_df(year, taxis_color, *months)
     print(df)
 
-    name = "./src/database/2020_yellow_jan_feb_mar.csv"
-    df.to_csv(name, index=False)
+    # name = "./src/database/2020_yellow_jan_feb_mar.csv"
+    # df.to_csv(name, index=False)
 
     sqlite_insert_df(db_name, table_name, df)
