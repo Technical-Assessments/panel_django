@@ -10,6 +10,10 @@ __pycache__/
 
 .idea/
 
+# Vscode
+.vscode/
+.vscode/*
+
 # Distribution / packaging
 .Python
 build/
